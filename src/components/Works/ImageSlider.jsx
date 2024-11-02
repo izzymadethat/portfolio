@@ -16,9 +16,9 @@ const ImageSlider = ({ images }) => {
     setCurrentIndex(newIndex);
   };
 
-  const handleImageClick = () => {
-    alert("Navigating to the image...");
-  };
+  // const handleImageClick = () => {
+  //   alert("Navigating to the image...");
+  // };
 
   return (
     <div className="slider">

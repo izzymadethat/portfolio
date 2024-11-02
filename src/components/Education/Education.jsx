@@ -1,5 +1,4 @@
-import React from "react";
-import "./Education.css"; // Make sure to create this CSS file
+import "./Education.css";
 import EducationCard from "./EducationCard";
 
 const Education = () => {
