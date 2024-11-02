@@ -1,0 +1,18 @@
+.about {
+  background: var(--bg-gradient);
+}
+
+.about__bio {
+  border: 2px solid var(--foreground);
+  border-radius: 0.5rem;
+  padding: 2rem 4rem;
+  display: flex;
+  gap: 2rem;
+  font-size: 1.2rem;
+}
+
+.about__bio div {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
