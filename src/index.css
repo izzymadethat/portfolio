@@ -48,7 +48,11 @@ section.hero {
   background: var(--bg-gradient);
   padding: 0 5rem;
   border-radius: 20px;
-  transition: ;
+  transition: var(--trans-02s);
+}
+
+section.hero:hover {
+  transform: rotateX(3deg) rotateY(10deg);
 }
 
 section .title {
