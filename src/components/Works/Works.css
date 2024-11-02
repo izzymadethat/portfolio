@@ -1,1 +1,185 @@
-/* TODO: Implement styles for the Works component */
+.slider {
+  position: relative;
+  width: 100%;
+  max-width: 64rem;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  /* border: 1px solid red; */
+}
+
+.slider__arrow {
+  position: absolute;
+  background: transparent;
+  color: var(--accent);
+  border: none;
+  border-radius: 0.625rem;
+  font-size: 3.5rem;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: var(--trans-03s);
+}
+
+.slider__arrow:hover {
+  background: var(--accent);
+  color: var(--background);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  transform: scale(0.85);
+}
+
+.slider__arrow.slider__arrow--left {
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 0.75rem;
+}
+
+.slider__arrow.slider__arrow--right {
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-right: 0.75rem;
+}
+
+.slider__image-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  border-radius: 0.625rem;
+}
+
+.slider__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 0.625rem;
+  transition: var(--trans-03s);
+}
+
+.slider__image:hover {
+  cursor: pointer;
+  transform: scale(0.96);
+}
+
+.slider__indicators {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.slider__indicators .slider__indicator {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  margin: 0 0.5rem;
+  background-color: var(--foreground);
+  transition: var(--trans-03s);
+  cursor: pointer;
+}
+
+.slider__indicators .slider__indicator.current {
+  background-color: var(--accent);
+}
+
+/* Tech Stack Carousel */
+.tech-stack-slider .tech-stack-slider__title {
+  font-style: italic;
+  text-align: center;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.carousel-container {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  width: 75%;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 2rem;
+  padding: 1rem;
+  gap: 1.5rem;
+}
+
+/* Adding shadow overlay */
+.carousel-container::before,
+.carousel-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 10px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.carousel-container::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(14, 14, 14, 0.233), transparent);
+}
+
+.carousel-container::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(14, 14, 14, 0.233), transparent);
+}
+
+.carousel-row {
+  display: flex;
+  gap: 1.5rem;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  flex-shrink: 0;
+}
+
+.carousel-item {
+  flex-shrink: 0;
+  z-index: 2;
+  display: flex;
+  background: var(--accent);
+  color: var(--background);
+  border-radius: 1rem;
+}
+
+.carousel-item span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  font-size: 6rem;
+  font-weight: 600;
+}
+
+/* .scroll-left {
+  animation: scrollLeft 10s linear infinite;
+}
+
+.scroll-right {
+  animation: scrollRight 10s linear infinite;
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scrollRight {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(50%);
+  }
+} */

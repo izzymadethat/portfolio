@@ -16,10 +16,10 @@
 
 .hero__title--name {
   font-family: "Noto Sans", sans-serif;
-  font-size: 7rem;
+  font-size: 9rem;
   text-transform: uppercase;
 
-  line-height: 0.8;
+  line-height: 0.9;
 }
 
 .hero p {
