@@ -1,0 +1,32 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--foreground);
+  padding: 0.5rem 1rem;
+  border-radius: 1.5rem;
+}
+
+.badge__icon {
+  width: 0.5rem;
+  height: 0.5rem;
+  background: var(--accent);
+  border-radius: 50%;
+  margin-right: 0.5rem;
+  animation: blink 2.54s infinite;
+}
+
+.badge__text {
+  color: var(--foreground);
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

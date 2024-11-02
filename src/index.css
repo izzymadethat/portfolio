@@ -21,13 +21,31 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 80%;
+  font-size: 62.5%;
 }
 
 body {
   background: var(--background);
   color: var(--text);
   font-family: "Noto Sans", sans-serif;
+}
+
+#root {
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
+section {
+  padding: 1.5rem 1.75rem;
+  border: 1px solid red;
+}
+
+section .title {
+  font-family: "Noto Serif", serif;
+  font-size: 2rem;
+  color: var(--text);
+  text-transform: uppercase;
+  margin-bottom: 2rem;
 }
 
 h1,
@@ -67,4 +85,22 @@ ul {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.btn-outline {
+  border: 1px solid var(--foreground);
+  padding: 0.5rem 1rem;
+  border-radius: 1.5rem;
+  transition: var(--trans-02s);
+  background-color: var(--accent);
+  color: var(--background);
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.btn-outline:hover {
+  background-color: transparent;
+  color: var(--text);
 }

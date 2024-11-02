@@ -1,0 +1,32 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--foreground);
+  margin: 1.75rem 0;
+}
+
+.header__title {
+  font-family: "Noto Sans", sans-serif;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.header__nav a {
+  color: var(--foreground);
+  font-size: 1.5rem;
+}
+
+.header__nav a:hover {
+  color: var(--accent);
+}
+
+.header__nav a:visited {
+  color: unset;
+}
