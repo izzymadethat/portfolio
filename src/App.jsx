@@ -1,4 +1,5 @@
 import About from "./components/About/About";
+import Contact from "./components/Contact/Contact";
 import Education from "./components/Education/Education";
 import Header from "./components/Header/Header";
 import Hero from "./components/Hero/Hero";
@@ -12,6 +13,7 @@ function App() {
       <Works />
       <About />
       <Education />
+      <Contact />
     </>
   );
 }

@@ -1,0 +1,70 @@
+.contact-section {
+  padding: 4rem 0;
+  /* background-color: #ffffff; White background */
+}
+
+.container {
+  max-width: 600px; /* Maximum width for the content */
+  margin: 0 auto; /* Centering */
+  padding: 0 1.5rem; /* Padding on the sides */
+}
+
+/* .section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #333333; 
+} 
+*/
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* Space between form elements */
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column; /* Stack label and input */
+}
+
+label {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: var(--text); /* Darker text color for labels */
+}
+
+input,
+textarea {
+  padding: 0.75rem 1rem;
+  border: 1px solid #cccccc; /* Light border */
+  border-radius: 4px; /* Rounded corners */
+  font-size: 1.5rem;
+  background-color: transparent;
+  color: var(--text);
+}
+
+textarea {
+  min-height: 100px; /* Minimum height for the textarea */
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--accent); /* Highlight border on focus */
+  outline: none; /* Remove outline */
+}
+
+.submit-button {
+  padding: 0.75rem 1.5rem;
+  border: none; /* No border */
+  border-radius: 4px; /* Rounded corners */
+  background-color: var(--accent); /* Primary button color */
+  color: var(--background); /* White text */
+  font-size: 1.5rem;
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s; /* Smooth transition */
+}
+
+.submit-button:hover {
+  background-color: #b39200;
+}
