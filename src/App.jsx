@@ -1,3 +1,5 @@
+import About from "./components/About/About";
+import Education from "./components/Education/Education";
 import Header from "./components/Header/Header";
 import Hero from "./components/Hero/Hero";
 import Works from "./components/Works/Works";
@@ -8,6 +10,8 @@ function App() {
       <Header />
       <Hero />
       <Works />
+      <About />
+      <Education />
     </>
   );
 }
