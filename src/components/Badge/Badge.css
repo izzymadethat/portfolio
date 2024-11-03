@@ -1,5 +1,6 @@
 .badge {
   display: inline-flex;
+  position: relative;
   align-items: center;
   border: 1px solid var(--foreground);
   padding: 0.5rem 1rem;
@@ -28,5 +29,12 @@
   }
   100% {
     opacity: 0;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .badge {
+    top: -350px;
+    transform: translateY(-50%);
   }
 }

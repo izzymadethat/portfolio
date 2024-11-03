@@ -31,14 +31,14 @@
 }
 
 .slider__arrow.slider__arrow--left {
-  left: 0;
+  left: -5rem;
   top: 50%;
   transform: translateY(-50%);
   margin-left: 0.75rem;
 }
 
 .slider__arrow.slider__arrow--right {
-  right: 0;
+  right: -5rem;
   top: 50%;
   transform: translateY(-50%);
   margin-right: 0.75rem;
@@ -71,7 +71,7 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  margin-top: 0.5rem;
+  margin-top: 1rem;
 }
 
 .slider__indicators .slider__indicator {

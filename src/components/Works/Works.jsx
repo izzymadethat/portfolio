@@ -7,15 +7,15 @@ import { RiTailwindCssFill } from "react-icons/ri";
 
 const images = [
   {
-    src: "https://placehold.co/600x400?text=Image1",
+    src: "https://placehold.co/400x300?text=Sonex",
     link: "#"
   },
   {
-    src: "https://placehold.co/600x400?text=Image2",
+    src: "https://placehold.co/400x300?text=SleepInn",
     link: "#"
   },
   {
-    src: "https://placehold.co/600x400?text=Image3",
+    src: "https://placehold.co/400x300?text=Dunno",
     link: "#"
   }
 ];
