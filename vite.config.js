@@ -4,7 +4,7 @@ import eslint from "vite-plugin-eslint";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: "/portfolio/",
+  base: "/",
   plugins: [
     react(),
     eslint({
