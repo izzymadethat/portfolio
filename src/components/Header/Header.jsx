@@ -6,7 +6,10 @@ const Header = () => {
   return (
     <>
       <header className="header">
-        <h3 className="header__title">Isaiah Vickers</h3>
+        {/* <h3 className="header__title">Isaiah Vickers</h3> */}
+        <div className="header__logo">
+          <img src="/logo.png" alt="" />
+        </div>
         <nav className="header__nav">
           <a
             href="https://github.com/izzymadethat"

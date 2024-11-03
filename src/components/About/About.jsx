@@ -4,7 +4,7 @@ const About = () => {
   return (
     <section id="about">
       <h3 className="title">About Me</h3>
-      <div className="about about__bio">
+      <div className="about__bio">
         <div>
           <p>
             Hello, and thanks for traveling to my space! I&apos;m Isaiah

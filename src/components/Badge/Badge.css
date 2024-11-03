@@ -1,6 +1,5 @@
 .badge {
-  display: inline-flex;
-  position: relative;
+  display: flex;
   align-items: center;
   border: 1px solid var(--foreground);
   padding: 0.5rem 1rem;
@@ -18,6 +17,7 @@
 
 .badge__text {
   color: var(--foreground);
+  text-align: center;
 }
 
 @keyframes blink {
@@ -29,12 +29,5 @@
   }
   100% {
     opacity: 0;
-  }
-}
-
-@media screen and (max-width: 1024px) {
-  .badge {
-    top: -350px;
-    transform: translateY(-50%);
   }
 }

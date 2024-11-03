@@ -14,7 +14,7 @@
 }
 
 .hero__title--name {
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Noto Serif", sans-serif;
   font-size: 9rem;
   text-transform: uppercase;
 
@@ -31,7 +31,39 @@
   align-items: center;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 768px) {
+  .hero__title,
+  .hero__title--name,
+  .hero p {
+    text-align: center;
+  }
+
+  .hero__title {
+    font-size: 1.1rem;
+  }
+
+  .hero__title--name {
+    font-family: "Noto Serif", sans-serif;
+    font-size: 3.5rem;
+  }
+
+  .hero p {
+    max-width: 100%;
+    font-size: 1rem;
+    margin: 0.75rem 0;
+  }
+
+  .hero {
+    margin: 0 1rem;
+  }
+
+  .hero__cta {
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 1024px) {
   .hero {
     margin: 0 2rem;
   }
@@ -39,20 +71,15 @@
   .hero__title,
   .hero__title--name,
   .hero p {
-    text-align: center;
+    text-align: left;
   }
 
   .hero__title--name {
-    font-size: 6rem;
-  }
-
-  .hero p {
-    max-width: 100%;
-    font-size: 1.2rem;
+    font-family: "Noto Serif", sans-serif;
+    font-size: 9rem;
   }
 
   .hero__cta {
-    justify-content: center;
-    flex-direction: column;
+    justify-content: start;
   }
 }

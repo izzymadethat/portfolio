@@ -88,6 +88,17 @@
   background-color: var(--accent);
 }
 
+@media screen and (max-width: 768px) {
+  .slider__arrow.slider__arrow--left {
+    left: -2rem;
+    color: var(--background);
+  }
+  .slider__arrow.slider__arrow--right {
+    right: -2rem;
+    color: var(--background);
+  }
+}
+
 /* Tech Stack Carousel */
 .tech-stack-slider .tech-stack-slider__title {
   font-style: italic;

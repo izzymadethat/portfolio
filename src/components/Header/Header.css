@@ -7,9 +7,17 @@
 }
 
 .header__title {
-  font-family: "Noto Sans", sans-serif;
   text-transform: uppercase;
   user-select: none;
+}
+
+.header__logo {
+  width: 15%;
+}
+
+.header__logo img {
+  width: 100%;
+  height: 100%;
 }
 
 .header__nav {
@@ -40,6 +48,11 @@
 
   .header__nav {
     gap: 1.75rem;
+  }
+
+  .header__logo {
+    width: 30%;
+    height: 100%;
   }
 
   .header__nav a {

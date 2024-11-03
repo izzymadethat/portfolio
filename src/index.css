@@ -21,7 +21,7 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 75%;
+  font-size: 90%;
 }
 
 body {
@@ -101,7 +101,7 @@ ul {
   border: 1px solid var(--foreground);
   padding: 1rem;
   width: 100%;
-  max-width: 150px;
+  max-width: 240px;
   border-radius: 1.5rem;
   transition: var(--trans-02s);
   background-color: transparent;
