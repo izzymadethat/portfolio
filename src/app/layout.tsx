@@ -1,17 +1,10 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { JetBrains_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
+const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Isaiah Vickers | Audio Engineer/Network Systems Administrator",
@@ -19,7 +12,7 @@ export const metadata: Metadata = {
     "Portfolio of Isaiah Vickers - Audio Engineer, Musician, Software Developer, and Networking Admin. Architecting the intersection of Sound, Code, and Connectivity.",
 };
 
-export const viewport = {
+export const viewport: Viewport = {
   themeColor: "#020617",
 };
 
