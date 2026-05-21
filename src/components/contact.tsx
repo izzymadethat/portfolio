@@ -20,6 +20,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
+import Image from "next/image";
 
 type ContactMode = "hire" | "chess" | "sayhi" | null;
 
@@ -298,15 +299,22 @@ export function ContactSection() {
                       whileHover={{ scale: 1.02 }}
                     >
                       <div className="w-16 h-16 mx-auto mb-4 rounded-xl bg-nebula/10 flex items-center justify-center">
-                        <span className="text-2xl font-bold text-nebula">
+                        {/* <span className="text-2xl font-bold text-nebula">
                           C.c
-                        </span>
+                        </span> */}
+                        <img
+                          src="https://www.chess.com/bundles/web/images/brand/chesscom_pawn.5dfdea51.png"
+                          alt="Chess.com Logo"
+                          width={32}
+                          height={32}
+                          className="object-contain size-full"
+                        />
                       </div>
                       <h4 className="text-lg font-semibold text-foreground mb-1">
                         Chess.com
                       </h4>
                       <p className="text-muted-foreground text-sm mb-4">
-                        @isaiahvickers
+                        @izzy850
                       </p>
                       <Button
                         asChild
@@ -315,7 +323,7 @@ export function ContactSection() {
                         className="w-full border-nebula/50 text-nebula hover:bg-nebula/10 bg-transparent"
                       >
                         <Link
-                          href="https://chess.com/member/isaiahvickers"
+                          href="https://www.chess.com/member/izzy850"
                           target="_blank"
                           rel="noopener noreferrer"
                         >
@@ -331,15 +339,19 @@ export function ContactSection() {
                       whileHover={{ scale: 1.02 }}
                     >
                       <div className="w-16 h-16 mx-auto mb-4 rounded-xl bg-nebula/10 flex items-center justify-center">
-                        <span className="text-2xl font-bold text-nebula">
-                          Li
-                        </span>
+                        <img
+                          src="https://upload.wikimedia.org/wikipedia/commons/4/47/Lichess_logo_2019.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original"
+                          alt="LiChess Logo"
+                          width={32}
+                          height={32}
+                          className="object-contain size-full"
+                        />
                       </div>
                       <h4 className="text-lg font-semibold text-foreground mb-1">
                         LiChess
                       </h4>
                       <p className="text-muted-foreground text-sm mb-4">
-                        @isaiahvickers
+                        @izzy850
                       </p>
                       <Button
                         asChild
@@ -348,7 +360,7 @@ export function ContactSection() {
                         className="w-full border-nebula/50 text-nebula hover:bg-nebula/10 bg-transparent"
                       >
                         <Link
-                          href="https://lichess.org/@/isaiahvickers"
+                          href="https://lichess.org/@/izzy850"
                           target="_blank"
                           rel="noopener noreferrer"
                         >
