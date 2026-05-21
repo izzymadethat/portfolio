@@ -9,6 +9,8 @@ import { motion } from "motion/react";
 import Link from "next/link";
 import { FaGithubAlt, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 import { Button } from "./ui/button";
+import Image from "next/image";
+import headshot from "@/assets/headshot.png";
 
 export function HeroSection() {
   return (
@@ -31,10 +33,14 @@ export function HeroSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <div className="absolute inset-0 rounded-full bg-linear-to-br from-gold/50 to-nebula/50 blur-xl animate-pulse" />
-            <div className="relative w-full h-full rounded-full border-2 border-gold/30 bg-card backdrop-blur-sm overflow-hidden flex items-center justify-center">
-              <span className="text-4xl md:text-5xl font-bold text-gold">
-                IV
-              </span>
+            <div className="relative size-48 rounded-full border-2 border-gold/30 bg-card backdrop-blur-sm overflow-hidden flex items-center justify-center">
+              <Image
+                src={headshot}
+                alt="Isaiah Vickers"
+                width={256}
+                height={256}
+                className="rounded-full object-cover size-full"
+              />
             </div>
           </motion.div>
 
@@ -65,7 +71,7 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
           >
-            Architecting the intersection of{" "}
+            Architect of{" "}
             <span className="text-gold font-medium">Sound</span>,{" "}
             <span className="text-nebula font-medium">Code</span>, and{" "}
             <span className="text-foreground font-medium">Connectivity</span>.
