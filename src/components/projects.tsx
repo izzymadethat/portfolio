@@ -6,6 +6,9 @@ import Link from "next/link";
 import { useState } from "react";
 import { FaGithub } from "react-icons/fa6";
 import { Button } from "./ui/button";
+import sonexSample from "@/assets/sonex-sample.png";
+import youtubeChannel from "@/assets/youtube-channel.png";
+import Image from "next/image";
 
 const techIcons: Record<string, { label: string; color: string }> = {
   react: { label: "React", color: "#61DAFB" },
@@ -24,9 +27,9 @@ const projects = [
     title: "Sonex",
     description:
       "A comprehensive audio production platform that streamlines the creative workflow from recording to final mix. Features real-time collaboration, cloud-based project management, and professional-grade audio processing tools.",
-    image: "/api/placeholder/600/400",
-    siteUrl: "https://sonex.app",
-    githubUrl: "https://github.com/isaiahvickers/sonex",
+    image: sonexSample,
+    siteUrl: "https://sonexaudio.com",
+    githubUrl: "https://github.com/izzymadethat/SonexAudioSolutions",
     techStack: ["react", "node", "typescript", "postgres"],
     featured: true,
   },
@@ -35,22 +38,11 @@ const projects = [
     title: "Independent Industry Academy",
     description:
       "An educational platform empowering independent artists and creators with industry knowledge. Comprehensive courses on music production, business, and marketing strategies for the modern creative professional.",
-    image: "/api/placeholder/600/400",
-    siteUrl: "https://iiacademy.com",
+    image: youtubeChannel,
+    siteUrl: "https://www.youtube.com/@mixedby8i",
     githubUrl: "https://github.com/isaiahvickers/iia",
-    techStack: ["nextjs", "typescript", "tailwind", "postgres"],
+    techStack: [],
     featured: true,
-  },
-  {
-    id: 3,
-    title: "Preserving Records Everywhere",
-    description:
-      "A digital archival initiative dedicated to preserving audio history. Built with robust storage solutions and intelligent cataloging systems to protect musical heritage for future generations.",
-    image: "/api/placeholder/600/400",
-    siteUrl: "https://pre-records.org",
-    githubUrl: "https://github.com/isaiahvickers/pre",
-    techStack: ["python", "c", "react", "node"],
-    featured: false,
   },
 ];
 
@@ -110,7 +102,7 @@ function TechStackOrbit({
                 type: "spring",
                 stiffness: 300,
               }}
-              className="px-3 py-1.5 rounded-full bg-background/80 backdrop-blur-sm border border-border/50 text-xs font-mono flex items-center gap-2"
+              className="px-3 py-1.5 rounded-full backdrop-blur-sm border border-border/50 text-xs font-mono flex items-center gap-2 z-10"
             >
               <div
                 className="w-2 h-2 rounded-full"
@@ -147,28 +139,31 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
 
       <div className="relative p-6 lg:p-8">
         {/* Project preview area */}
+
         <div className="relative aspect-video mb-6 rounded-xl overflow-hidden bg-muted/20 border border-border/30">
-          {/* Placeholder gradient background */}
-          <div
-            className="absolute inset-0"
-            style={{
-              background: `linear-gradient(135deg, oklch(0.35 0.12 280 / 0.3), oklch(0.18 0.03 265 / 0.8))`,
-            }}
+          {/* Image */}
+          <Image
+            src={project.image}
+            alt={project.title}
+            width={1920}
+            height={1080}
+            className="absolute inset-0 size-full rounded-xl object-cover transition-transform duration-500 group-hover:scale-105"
           />
 
+
           {/* Project title overlay */}
-          <div className="absolute inset-0 flex items-center justify-center">
+          {/* <div className="absolute inset-0 flex items-center justify-center">
             <span className="text-2xl lg:text-3xl font-bold text-gold/60">
               {project.title}
             </span>
-          </div>
+          </div> */}
 
           {/* Hover overlay with links */}
           <AnimatePresence>
             {isHovered && (
               <motion.div
                 initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
+                animate={{ opacity: 0.6 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.2 }}
                 className="absolute inset-0 bg-background/90 backdrop-blur-sm flex items-center justify-center gap-4"
@@ -240,7 +235,7 @@ export function ProjectsSection() {
             Featured Work
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">
-            My Projects
+            My Current Projects
           </h2>
         </motion.div>
 
