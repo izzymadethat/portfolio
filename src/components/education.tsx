@@ -8,6 +8,10 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import Image from "next/image";
+import { AWSBadge, PresidentsListBadge, MOSExcel, MOSPowerPoint } from "@/assets/badges";
+import { Button } from "./ui/button";
+import Link from "next/link";
 
 const education = [
   {
@@ -50,7 +54,7 @@ const certifications = [
     issuer: "SoloLearn",
     icon: "SL",
     color: "gold",
-    tooltip: "Multiple language certifications",
+    tooltip: "Multiple language certifications including Python, Javascript, and SQL",
     completed: true,
   },
   {
@@ -66,10 +70,41 @@ const certifications = [
     issuer: "Cisco",
     icon: "CC",
     color: "gold",
-    tooltip: "Expected June 2026",
+    tooltip: "Expected September 2026",
     completed: false,
   },
 ];
+
+const achievements = [
+  {
+    title: "President's List",
+    description: "Awarded for achieving a perfect 4.0 GPA for each semester.",
+    timesAwarded: 2,
+    imageURL: PresidentsListBadge,
+    badgeUrl: "https://badges.parchment.com/public/assertions/Um9jbYF7RhOxOmuN-nRv2Q?identity__email=vicke78c@mymail.tsc.fl.edu&action=download",
+  },
+  {
+    title: "AWS Trained",
+    description: "Completed AWS Cloud Practitioner training program.",
+    timesAwarded: 1,
+    imageURL: AWSBadge,
+    badgeUrl: "https://www.credly.com/badges/d5162901-7035-4e81-8324-5fb6956a45e5/public_url",
+  },
+  {
+    title: "Microsoft Office Specialist - Excel",
+    description: "Verified proficiency in Microsoft Excel.",
+    timesAwarded: 1,
+    imageURL: MOSExcel,
+    badgeUrl: "https://www.credly.com/badges/c808970d-d889-4a61-b511-4f46ed2fe96d/public_url",
+  },
+  {
+    title: "Microsoft Office Specialist - PowerPoint",
+    description: "Verified proficiency in Microsoft PowerPoint.",
+    timesAwarded: 1,
+    imageURL: MOSPowerPoint,
+    badgeUrl: "https://www.credly.com/badges/84501050-264e-4782-84ea-c18b78216c8f/public_url",
+  }
+]
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -178,85 +213,151 @@ export function EducationSection() {
             </motion.div>
           </div>
 
-          {/* Certifications Grid */}
+          {/* Certifications and Achievements Grid */}
           <div>
-            <motion.h3
-              className="text-xl font-semibold text-gold mb-8 flex items-center gap-2"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <Award className="w-5 h-5" />
-              Certifications
-            </motion.h3>
+            <div>
+              <motion.h3
+                className="text-xl font-semibold text-gold mb-8 flex items-center gap-2"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
+                <Award className="w-5 h-5" />
+                Certifications
+              </motion.h3>
 
-            <TooltipProvider>
+              <TooltipProvider>
+                <motion.div
+                  className="grid grid-cols-2 sm:grid-cols-3 gap-4"
+                  variants={containerVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: "-100px" }}
+                >
+                  {certifications.map((cert) => (
+                    <Tooltip key={cert.name}>
+                      <TooltipTrigger asChild>
+                        <motion.div
+                          variants={itemVariants}
+                          className={`
+                            group relative overflow-hidden rounded-xl p-4
+                            bg-card/60 backdrop-blur-md border border-border
+                            hover:border-${cert.color}/50 transition-all duration-300
+                            cursor-default
+                            ${!cert.completed ? "opacity-70" : ""}
+                          `}
+                          whileHover={{ scale: 1.05 }}
+                        >
+                          {/* Glow effect */}
+                          <div
+                            className={`
+                            absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300
+                            ${cert.color === "gold" ? "bg-gold/5" : "bg-nebula/5"}
+                          `}
+                          />
+
+                          <div className="relative text-center">
+                            {/* Icon badge */}
+                            <div
+                              className={`
+                              mx-auto w-12 h-12 rounded-lg flex items-center justify-center mb-3
+                              font-mono font-bold text-sm
+                              ${cert.color === "gold" ? "bg-gold/10 text-gold" : "bg-nebula/10 text-nebula"}
+                              ${cert.completed ? "" : "grayscale-50"}
+                            `}
+                            >
+                              {cert.icon}
+                            </div>
+
+                            <h4 className="text-xs font-medium text-foreground leading-tight line-clamp-2">
+                              {cert.name}
+                            </h4>
+
+                            {!cert.completed && (
+                              <span className="absolute top-1 right-1 w-2 h-2 rounded-full bg-nebula animate-pulse" />
+                            )}
+                          </div>
+                        </motion.div>
+                      </TooltipTrigger>
+                      <TooltipContent
+                        side="top"
+                        className="bg-card border-border text-foreground"
+                      >
+                        <p className="text-sm">{cert.tooltip}</p>
+                        <p className="text-xs text-muted-foreground mt-1">
+                          {cert.issuer}
+                        </p>
+                      </TooltipContent>
+                    </Tooltip>
+                  ))}
+                </motion.div>
+              </TooltipProvider>
+            </div>
+
+            <div>
+              <motion.h3
+                className="text-xl font-semibold text-gold mt-12 mb-8 flex items-center gap-2"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
+                <Award className="w-5 h-5" />
+                Academic Achievements
+              </motion.h3>
+
               <motion.div
-                className="grid grid-cols-2 sm:grid-cols-3 gap-4"
+                className="grid grid-cols-1 sm:grid-cols-2 gap-4"
                 variants={containerVariants}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, margin: "-100px" }}
               >
-                {certifications.map((cert) => (
-                  <Tooltip key={cert.name}>
-                    <TooltipTrigger asChild>
-                      <motion.div
-                        variants={itemVariants}
-                        className={`
-                          group relative overflow-hidden rounded-xl p-4
-                          bg-card/60 backdrop-blur-md border border-border
-                          hover:border-${cert.color}/50 transition-all duration-300
-                          cursor-default
-                          ${!cert.completed ? "opacity-70" : ""}
-                        `}
-                        whileHover={{ scale: 1.05 }}
-                      >
-                        {/* Glow effect */}
-                        <div
-                          className={`
-                          absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300
-                          ${cert.color === "gold" ? "bg-gold/5" : "bg-nebula/5"}
-                        `}
-                        />
+                {achievements.map((ach) => (
+                  <motion.div
+                    key={ach.title}
+                    variants={itemVariants}
+                    className="relative rounded-xl p-6 bg-card/60 backdrop-blur-md border border-border hover:border-gold/30 transition-colors duration-300"
+                  >
+                    {/* Background glow */}
+                    <div className="absolute inset-0 bg-gold/50 opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-xl" />
 
-                        <div className="relative text-center">
-                          {/* Icon badge */}
-                          <div
-                            className={`
-                            mx-auto w-12 h-12 rounded-lg flex items-center justify-center mb-3
-                            font-mono font-bold text-sm
-                            ${cert.color === "gold" ? "bg-gold/10 text-gold" : "bg-nebula/10 text-nebula"}
-                            ${cert.completed ? "" : "grayscale-50"}
-                          `}
-                          >
-                            {cert.icon}
-                          </div>
-
-                          <h4 className="text-xs font-medium text-foreground leading-tight line-clamp-2">
-                            {cert.name}
-                          </h4>
-
-                          {!cert.completed && (
-                            <span className="absolute top-1 right-1 w-2 h-2 rounded-full bg-nebula animate-pulse" />
-                          )}
-                        </div>
-                      </motion.div>
-                    </TooltipTrigger>
-                    <TooltipContent
-                      side="top"
-                      className="bg-card border-border text-foreground"
-                    >
-                      <p className="text-sm">{cert.tooltip}</p>
-                      <p className="text-xs text-muted-foreground mt-1">
-                        {cert.issuer}
+                    {/* Image */}
+                    <div className="relative size-24">
+                      <Image
+                        src={ach.imageURL}
+                        alt={ach.title}
+                        width={600}
+                        height={600}
+                        className="absolute -top-12 -left-12 size-full rounded-full object-cover"
+                      />
+                    </div>
+                    
+                    <div>
+                      <h4 className="text-lg font-semibold text-foreground mb-2">
+                        {ach.title}
+                      </h4>
+                      <p className="text-muted-foreground text-sm leading-relaxed text-pretty mb-3">
+                        {ach.description}
                       </p>
-                    </TooltipContent>
-                  </Tooltip>
+                      {ach.timesAwarded > 1 && (
+                        <div className="flex items-center gap-2 text-sm text-gold">
+                          <Award className="w-4 h-4" />
+                          <span>Awarded {ach.timesAwarded} times</span>
+                        </div>
+                      )}
+
+                      <Button asChild size="sm" variant="outline" className="mt-4">
+                        <Link href={ach.badgeUrl} target="_blank" rel="noopener noreferrer">
+                          Verify Badge
+                        </Link>
+                      </Button>
+                    </div>
+                  </motion.div>
                 ))}
               </motion.div>
-            </TooltipProvider>
+            </div>
           </div>
         </div>
       </div>
